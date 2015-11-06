@@ -8,8 +8,8 @@ original_data$Date2 <- strptime(paste(original_data$Date, original_data$Time), "
 
 new_data <- subset(original_data, Date1 == as.Date("2007-02-01", "%Y-%m-%d") | Date1 == as.Date("2007-02-02", "%Y-%m-%d"))
 
-png(filename = "plot1.png",width = 480, height = 480)
+png(filename = "plot2.png",width = 480, height = 480)
 
-hist(new_data$Global_active_power, col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
+plot(new_data$Date2, new_data$Global_active_power,type="l", xlab = "", ylab = "Global Active Power (kilowatts)")
 
 dev.off()
